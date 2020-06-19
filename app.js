@@ -7,8 +7,8 @@ const app = express();
 app.use(cors());
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: false }));
-app.use("api/v1", "/routes");
+app.use("api/v1", require("./src/routes"));
 
-require("./src/data/db").connect();
+//require("./src/data/db").connect();
 
 module.exports = app;
